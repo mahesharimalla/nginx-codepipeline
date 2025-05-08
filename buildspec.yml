@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Dependencies
+  build:
+    commands:
+      - echo Build Done
+      - mkdir output
+      - cp index.html output/
+      - cp appspec.yml output/
+      - mkdir output/scripts
+      - cp scripts/restart_nginx.sh output/scripts/
+artifacts:
+  files:
+    - output/**/*
+
